@@ -1,0 +1,55 @@
+/*
+ * 1)WAP to demonstrate (2.45pm to 3.30)
+a)class, object
+b)array of object
+c)different method
+d)constructor
+e)constructor /method overloading
+f)static variable, method
+
+ */
+public class Test {
+
+	public static void main(String[] args) {
+		Employee emp[] = new Employee[5];
+		emp[0] = new Employee(1,"prakash");
+		emp[1] = new Employee(2,"adesh");
+		emp[2] = new Employee(3,"kiran");
+		emp[3] = new Employee(4,"swapnil");
+		emp[4] = new Employee(5,"mayuresh");
+		// TODO Auto-generated method stub
+for (int i =0;i<emp.length;i++)
+    {
+System.out.println("Employee Id ="+emp[i].empId+"Employee Name ="+emp[i].empName);
+    }
+	}
+
+}
+class Employee
+{
+	int empId;
+	String empName;
+	static String companyName="cdac";
+	public Employee(int empId,String empName)
+	{
+		this.empId = empId;
+		this.empName = empName;
+	}
+	/*public void displayData(Employee emp[])
+	{
+		System.out.println("Employee Id = "+this.empId);
+		System.out.println("Employee Name = "+this.empName);
+		System.out.println("Company Name = "+companyName);
+	}
+}*/
+class TeachingStaff extends Employee
+{
+	String subName;
+	public  void displayData (int empId,String empName,String subName )
+	{
+		this.empId = empId;
+		this.empName = empName;
+		this.subName = subName;
+	}
+	
+}
