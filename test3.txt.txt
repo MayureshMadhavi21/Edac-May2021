@@ -1,0 +1,179 @@
+------------------------------------------------------------------------------------------
+
+public class DisplayTime {
+	int sec;
+	int hrs;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Time t = new Time();
+		t.acceptMin(45);
+		
+
+	}
+
+	interface Display
+	{
+		
+		int dispTimeInSec();
+		int dispTimeInhrs();
+		
+	}
+ class DisplayT implements Display
+{
+	int sec;
+	int hrs;
+	void acceptSec(int sec)
+	{
+		this.sec=sec;
+	}
+	void accepthrs(int hrs)
+	{
+		this.hrs=hrs;
+	}
+	int dispTimeInSec()
+	{ 
+		System.out.println("the time in second "+this.sec);
+	}
+	int dispTimeInhrs()
+	{
+		System.out.println("the time in hour "+this.hrs);
+	}
+}
+	
+
+}
+class Time extends DisplayT
+{
+	int min;
+	
+	void acceptMin(int min)
+	{
+		this.min=min;
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------
+
+import java.util.*;
+
+public class DemoArrayList {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		Employee e1 = new Employee(105,"akash");
+		Employee e2 = new Employee(100,"akshay");
+		ArrayList<Employee> emp = new ArrayList<>();
+		emp.add(e1);
+		emp.add(e2);
+		Iterator itr = emp.iterator();
+		
+		while(itr.hasNext())
+		{
+			Employee empt= (Employee)itr.next();
+			System.out.println(empt.empid+" "+empt.name);
+			
+			
+					
+		}
+	}
+
+}
+class Employee
+{  
+int empid;  
+String name;  
+Employee(int empid,String name)
+{  
+this.empid=empid;  
+this.name=name;  
+}
+}
+	  
+------------------------------------------------------------------------------------------------------------------------
+
+public class BuiltInExceptions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int i = 6;
+int j = 0;
+try 
+{
+	int k;
+	k = i/j;
+	System.out.println(k);
+}
+catch (Exception e)
+{
+	System.out.println("the no cannot be divide by zero");
+}
+try 
+{
+	int arr [] =new int [5];
+	arr[7]=6;
+}
+catch (Exception e)
+{
+	System.out.println("the length of array is 5");
+}
+try
+{
+	int arr[][]=new int[5][];
+	System.out.println(arr[1][2]);
+}
+catch (Exception e)
+{
+	System.out.println("null pointer exception");
+}
+	}
+
+}
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+public class MethodOverriding {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+     
+	}
+
+	class Student
+	{
+		int rollNo;
+		String name;
+		void acceptData(int rollNo, String name)
+		{
+			this.rollNo = rollNo;
+			this.name = name;
+		}
+		
+	}
+	class Marks extends Student
+	{
+		float marks;
+		void acceptMarks(float marks)
+		{
+			this.marks = marks;
+		}
+	}
+	class Result extends Marks
+	{
+		void displayResult(float marks)
+		{
+		if (this.marks>35)
+		{
+			System.out.println("Pass");
+		}
+		else
+		{
+			System.out.println("fail");
+		}
+	}
+}
+}
+
+---------------------------------------------------------------------------------------------------------------------------
